@@ -519,6 +519,10 @@
   margin: 0.5rem auto;
   overflow: hidden;
 }
+.profile__image .slider .swiper-slide {
+  aspect-ratio: 3/2;
+  overflow: hidden;
+}
 .profile__image .swiper-thumbnail {
   max-width: 400px;
   margin: auto;
