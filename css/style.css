@@ -599,6 +599,7 @@
 }
 .profile__sns {
   display: flex;
+  font-size: 20px;
 }
 .profile__sns li:nth-last-child(-n+2) {
   margin-left: 20px;
