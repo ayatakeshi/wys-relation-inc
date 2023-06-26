@@ -1,0 +1,29 @@
+@use "mixin" as m;
+
+.staff {
+    height: 50vh;
+    background: var(--lightGray);
+    &__list {
+        @include m.mq(tb) {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        li {
+            position: relative;
+            padding: 20px;
+        }
+    }
+    &__image {
+        img {
+            width: 100%;
+        }
+    }
+    &__name {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-size: 32px;
+        font-family: 'Rajdhani', sans-serif;
+    }
+}

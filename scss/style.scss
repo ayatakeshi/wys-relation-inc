@@ -1,0 +1,146 @@
+@use "mixin" as m;
+@use "header";
+@use "talent";
+@use "news";
+@use "company";
+@use "staff";
+@use "contact";
+@use "footer";
+@use "profile";
+
+body {
+    font-size: 14px;
+    font-family: 'Teko', 'Noto Sans JP', sans-serif;
+    line-height: 1.7;
+}
+img {
+    max-width: 100%;
+}
+
+.main {
+    &__inner {
+        height: 100vh;
+        background: var(--charcoal);
+        color: var(--white);
+    }
+    &__visual {
+        padding: 0 50px;
+        text-align: center;
+        transform: translateY(40vh);
+        @include m.mq(tb) {
+            padding: 0 100px;
+            transform: translateY(30vh);
+        }
+    }
+    &__title {
+        font-size: 32px;
+        max-width: 960px;
+        margin: 0 auto;
+        @include m.mq(tb) {
+            font-size: 64px;
+        }
+        @include m.mq(pc) {
+            font-size: 110px;
+        }
+        &::after {
+            display: block;
+            content: "";
+            width: 100%;
+            height: 1px;
+            margin: 20px 0;
+            background: var(--white);
+        }
+        span {
+            padding: 0 2%;
+        }
+    }
+    &__text {
+        opacity: 0;
+        font-size: 16px;
+        @include m.mq(tb) {
+            font-size: 32px;
+        }
+        @include m.mq(pc) {
+            font-size: 48px;
+        }
+    }
+    .section {
+        padding: 20vh 50px;
+        @include m.mq(pc) {
+            padding: 20vh 100px;
+        }
+        &__title {
+            font-size: 30px;
+            margin-bottom: 32px;
+            @include m.mq(tb) {
+                font-size: 48px;
+                margin-bottom: 50px;
+            }
+        }
+        &.company {
+            padding: 20vh 50px;
+            @include m.mq(pc) {
+                padding: 20vh 100px;
+            }
+        }
+        .more {
+            margin: 50px auto;
+            padding: 5px 0;
+            border: 1px solid var(--charcoal);
+            opacity: 0;
+            font-size: 24px;
+            text-align: center;
+            @include m.mq(tb) {
+                width: 480px;
+            }
+            &:hover a {
+                animation: flashing02 .5s forwards;
+            }
+            a {
+                display: block;
+            }
+        }
+        &.company {
+            .more {
+                border: 1px solid var(--white);
+                &:hover a {
+                    animation: flashing01 .5s forwards;
+                }
+            }
+        }
+    }
+    .displayed{
+        animation: fadeUp 1s forwards;
+    }
+    .delay01.displayed{
+        animation-delay: .3s;
+    }
+    .delay02.displayed{
+        animation-delay: .5s;
+    }
+    .delay03.displayed{
+        animation-delay: .7s;
+    }
+    @keyframes fadeUp{
+    0%{opacity:0; transform: translateY(100px);}
+    100%{opacity:1; transform: translateY(0);}
+    }
+    @keyframes flashing01{
+    0%{color: var(--white);}
+    20%{color: var(--charcoal);}
+    40%{color: var(--white);}
+    60%{color: var(--charcoal);}
+    80%{color: var(--white);}
+    90%{color: var(--charcoal);}
+    100%{color: var(--white);}
+    }
+    @keyframes flashing02{
+    0%{color: var(--charcoal);}
+    20%{color: var(--white);}
+    40%{color: var(--charcoal);}
+    60%{color: var(--white);}
+    80%{color: var(--charcoal);}
+    90%{color: var(--white);}
+    100%{color: var(--charcoal);}
+    }
+}

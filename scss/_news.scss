@@ -1,0 +1,19 @@
+@use "mixin" as m;
+.news {
+    background: var(--lightGray);
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        li {
+            width: 48%;
+            margin-bottom: 4%;
+            @include m.mq(tb) {
+                width: 30%;
+            }
+        }
+    }
+    &__image {
+        width: 100%;
+    }
+}

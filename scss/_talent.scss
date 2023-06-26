@@ -1,0 +1,53 @@
+@use "mixin" as m;
+
+.talent {
+    min-height: 50vh;
+    background: var(--lightGray);
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+            position: relative;
+            margin-bottom: 4%;;
+            background: var(--white);
+            opacity: 0;
+            @include m.mq(tb) {
+                width: 48%;
+                margin: 0 2% 4% 0;
+            }
+            @include m.mq(pc) {
+                width: 32%;
+                margin: 0 1% 4% 0;
+            }
+            :last-child {
+                margin: 0;
+            }
+        }
+    }
+    &__image {
+        img {
+            width: 100%;
+        }
+    }
+    &__name {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        width: 100%;
+        padding-left: 20px;
+        background: var(--charcoal80);
+        color: var(--white);
+        font-size: 18px;
+        font-family: 'Rajdhani', 'Noto Sans JP', sans-serif;
+        span {
+            padding-left: 2%;
+            font-size: 14px;
+            @include m.mq(tb) {
+                font-size: 20px;
+            }
+        }
+        @include m.mq(tb) {
+            font-size: 24px;
+        }
+    }
+}

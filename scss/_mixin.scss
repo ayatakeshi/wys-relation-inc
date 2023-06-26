@@ -1,0 +1,20 @@
+// color
+:root {
+    --black: #191919;
+    --charcoal: #2e2e2e;
+    --charcoal80: rgba(46,46,46,0.8);
+    --lightGray: #e6e6e6;
+    --white: #ffffff;
+}
+// media
+$breakpoint: (
+    // sp: 'screen and (max-width: 767px)',
+    tb: 'screen and (min-width: 768px)',
+    pc: 'screen and (min-width: 1025px)'
+);
+
+@mixin mq($bp) {
+    @media #{map-get($breakpoint, $bp)} {
+    @content;
+    }
+}

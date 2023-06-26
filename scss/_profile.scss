@@ -1,0 +1,153 @@
+@use "mixin" as m;
+
+.profile {
+    padding: 100px 50px;
+    background: var(--lightGray);
+    @include m.mq(tb) {
+        padding: 10vh 100px 20vh;
+    }
+    &__image {
+        max-width: 1024px;
+        margin: auto;
+        img {
+            width: 100%;
+        }
+        /*コンテナ要素のスタイル*/
+        .swiper-container {
+            width: 100%;
+            margin: 0.5rem auto;
+            overflow: hidden;
+        }
+        .slider {
+            .swiper-slide {
+
+            }
+        }
+        .swiper-thumbnail {
+            max-width: 400px;
+            margin: auto;
+        }
+        .swiper-thumbnail .swiper-slide {
+        opacity: 0.2;
+        transition: opacity 0.5s;
+        }
+        /*アクティブなときのスタイル*/
+        .swiper-thumbnail .swiper-slide.swiper-slide-thumb-active {
+            opacity: 1;
+        }
+    }
+    &__image {
+        max-width: 1024px;
+        margin: 0 auto 50px;
+        @include m.mq(tb) {
+            margin: 0 auto 100px;
+        }
+    }
+    &__name {
+        margin-bottom: 50px;
+        font-size: 32px;
+        font-weight: bold;
+        font-family: 'Rajdhani', 'Noto Sans JP', sans-serif;
+        text-align: center;
+        span {
+            display: block;
+            font-size: 28px;
+        }
+    }
+    &__profile {
+        max-width: 1024px;
+        margin: 0 auto 50px;
+    }
+    &__title {
+        width: fit-content;
+        height: fit-content;
+        margin-bottom: 20px;
+        padding: 5px 5px 0;
+        background: var(--black);
+        font-size: 24px;
+        color: var(--white)
+    }
+    &__wrapper {
+        @include m.mq(tb) {
+            display: flex;
+        }
+    }
+    &__thumbnail {
+        margin-bottom: 20px;
+        @include m.mq(tb) {
+            width: 50%;
+            margin: 0 50px 0 0;
+        }
+        img {
+            width: 100%;
+        }
+    }
+    &__text {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+        font-family: 'Noto Sans JP', sans-serif;
+        @include m.mq(tb) {
+        }
+        dt {
+            width: 30%;
+        }
+        dd {
+            width: 70%;
+            span {
+                padding-left: 10px;
+            }
+        }
+    }
+    &__sns {
+        display: flex;
+        li {
+            &:nth-last-child(-n+2) {
+                margin-left: 20px;
+            }
+        }
+    }
+    &__topics {
+        max-width: 1024px;
+        margin: 0 auto 50px;
+    }
+    .topics {
+        &__text {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+    }
+    &__biography {
+        max-width: 1024px;
+        margin: 0 auto 50px;
+    }
+    .biography {
+        &__content {
+            margin-bottom: 20px;
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        &__heading {
+            position: relative;
+            padding: 0 50px;
+            font-size: 20px;
+            &::before {
+                display: block;
+                content: "";
+                position: absolute;
+                top: 20px;
+                left: 0;
+                width: 40px;
+                height: 1px;
+                background: var(--black);
+            }
+        }
+        &__text {
+            .pcBr {
+                display: none;
+                @include m.mq(tb) {
+                    // display: block;
+                }
+            }
+        }
+    }
+
+}
